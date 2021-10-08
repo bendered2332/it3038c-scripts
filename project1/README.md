@@ -18,4 +18,4 @@ Now, from the project1 directory, run the program using Python
 ```bash
 python Halloween-counter.py
 ```
-Feel free to alter the download the code and alter the dates if you want to have a counter toward your favorite holiday or birthday.
+
