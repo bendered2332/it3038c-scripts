@@ -3,6 +3,12 @@ var http = require("http");
 var ip = require('ip')
 var os = require("os")
 
+function getuptime() {
+  serverTime = os.uptime();
+
+  return serverTime
+}
+
 var server = http.createServer(function (req, res) {
   if (req.url === "/") {
     res.writeHead(200, { "content-Type": "text/html" });
@@ -21,8 +27,8 @@ var server = http.createServer(function (req, res) {
           </head>
           <body>
             <p>Hostname: ${myHostname}</p>
-            <p>IP: ${ip.address}</p>
-            <p>Server Uptime: </p>
+            <p>IP: ${ip.address()}</p>
+            <p>Server Uptime: ${getuptime()}</p>
             <p>Total Memory: </p>
             <p>Free Memory: </p>
             <p>Number of CPUs: </p>
