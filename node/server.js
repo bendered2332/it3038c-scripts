@@ -9,6 +9,21 @@ function getuptime() {
   return serverTime
 }
 
+function getCPUCores(){
+const numOfCpus = os.cpus().length;
+return numOfCpus;
+}
+
+function getTotalMemory(){
+  totalMem = os.totalmem
+  return totalMem
+}
+
+function getFreeMemory(){
+  freeMem = os.freemem
+  return freeMem;
+}
+
 var server = http.createServer(function (req, res) {
   if (req.url === "/") {
     res.writeHead(200, { "content-Type": "text/html" });
@@ -29,9 +44,9 @@ var server = http.createServer(function (req, res) {
             <p>Hostname: ${myHostname}</p>
             <p>IP: ${ip.address()}</p>
             <p>Server Uptime: ${getuptime()}</p>
-            <p>Total Memory: </p>
-            <p>Free Memory: </p>
-            <p>Number of CPUs: </p>
+            <p>Total Memory: ${getTotalMemory()}</p>
+            <p>Free Memory: ${getFreeMemory()}</p>
+            <p>Number of CPUs: ${getCPUCores()}</p>
           </body>
           </html>`
 
