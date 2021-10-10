@@ -5,8 +5,16 @@ var os = require("os")
 
 function getuptime() {
   serverTime = os.uptime();
+    var d = Math.floor(serverTime / (3600*24));
+    var h = Math.floor(serverTime % (3600*24) / 3600);
+    var m = Math.floor(serverTime % 3600 / 60);
+    var s = Math.floor(serverTime % 60);
 
-  return serverTime
+    var dDisplay = d > 0 ? d + (d == 1 ? " day, " : " days, ") : "";
+    var hDisplay = h > 0 ? h + (h == 1 ? " hour, " : " hours, ") : "";
+    var mDisplay = m > 0 ? m + (m == 1 ? " minute, " : " minutes, ") : "";
+    var sDisplay = s > 0 ? s + (s == 1 ? " second" : " seconds") : "";
+      return dDisplay + hDisplay + mDisplay + sDisplay;
 }
 
 function getCPUCores(){
@@ -16,12 +24,16 @@ return numOfCpus;
 
 function getTotalMemory(){
   totalMem = os.totalmem
-  return totalMem
+  totalMBMem = totalMem / 1000000;
+  var totalMBDisplay = totalMBMem + "MB";
+  return totalMBDisplay
 }
 
 function getFreeMemory(){
   freeMem = os.freemem
-  return freeMem;
+  freeMBMem = freeMem / 1000000;
+  var freeMBDisplay = freeMBMem + "MB"
+  return freeMBDisplay;
 }
 
 var server = http.createServer(function (req, res) {
