@@ -45,3 +45,5 @@ print(a.itemsize)
 print(a.nbytes)
 # 12 
 ```
+
+This is the very basics of numpy but the main reason to use numpy is that is faster while performing mathematical operations compared to base python. It an essential package and has been used in many scientific achievements, and example of this would be the photo of the black hole that was taken recently.
