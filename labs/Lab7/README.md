@@ -8,35 +8,40 @@ First, let's download numpy with the command.
 pip install numpy
 ```
 
-Now, find an image you want to use. It can be anything, really. In fact, if we're smart, we can do it all from the command line. 
-
-Download an image from the internet and save it to your hard drive. 
-
-Now, in Python, run the following code:
-
-```python
-from PIL import Image,ImageFilter
-myImage = Image.open('/full/path/to/image.jpg')
-myImage.load
-```
-
-The syntax above will load the image. Now we can run several commands against it to get format and size, and even show the image.
-
-```python
-myImage.format
-myImage.size
-myImage.show()
-```
-
-Finally, we can use the ImageFilter module to apply a filter to it and show it, like so...
-
-```python
-blur = myImage.filter(ImageFilter(BLUR)).show()
-quit()
-```
-
-I hope that was fun. Don't forget to deactivate your virtualenv when you're done.
-
+Now, lets import the numpy module with the code 
 ```bash
-deactivate
+import numpy as np
+```
+In order to initialize an array you can do the following
+```bash
+a = np.array([1, 2, 3], dtype='int32')
+print(a)
+```
+
+You can also initialize more complex arrays such as a 2d array of floats.
+```bash
+b = np.array([[9.0, 8.0, 7.0], [6.0, 5.0, 4.0]])
+print(b)
+```
+The following code demostrates some information that numpy can return about these arrays.
+```bash
+# Get Dimension - Returns the demension type of array 
+print(a.ndim)
+# 1
+
+# Get Shape - Returns the amount of rows and columns in the array.
+print(b.shape)
+# 2,3
+
+# Get Type - Reurns the data type of the array.
+print(a.dtype)
+# dtype('int32)
+
+# Get Size - Returns the amount of bytes used.
+print(a.itemsize)
+# 4
+
+# Get total size - Returns the amount of bits used.
+print(a.nbytes)
+# 12 
 ```
