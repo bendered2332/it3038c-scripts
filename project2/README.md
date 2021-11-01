@@ -1,12 +1,13 @@
 # Project 2
 
-I wrote this project because I was really fascinated by Beautiful Soup and wanted to work more with it after completing Lab 8. For this project I just pulled some extra data from their online store and made it all print out to the console. I also checked this with multiple items in their store and it worked everytime.
+I wrote this project because I was really fascinated by Beautiful Soup and wanted to work more with it after completing Lab 8. For this project I just pulled some extra data from their online store and made it all print out to the console. 
 
-To run this program, make sure that Python3 is installed and working. As well as BeautifulSoup, lxml, html5lib, and requests. You can do this by running the following command
+To run this program, make sure that BeautifulSoup, lxml, html5lib, and requests sre installed. You can do this by running the following command
 
 ```bash
 pip install bs4 lxml html5lib requests
 ```
+
 Below is the code that I came up with in order to pull what I believe to be the most useful information from their website.
 ```bash
 import requests
@@ -49,4 +50,8 @@ print(sizes)
 print(shipping + "You also have " + cart + " additional item(s) in your cart.")
 ```
 
-If the url is valid and is the similar to the one in the code(Is the webpage for that single item). Then you should get the name of the item, it's price, what material it's made out of, it's possible sizes, the shipping details, and how many items you have in your cart.
+When you want to run the script make sure your in the correct folder and then enter the command.
+```bash
+python scraper.py
+```
+ Then you should get the name of the item, it's price, what material it's made out of, it's possible sizes, the shipping details, and how many items you have in your cart.
