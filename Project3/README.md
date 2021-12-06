@@ -67,4 +67,5 @@ When you want to run the script make sure your in the correct folder and then en
 ```bash
 python scraper.py
 ```
- Then you should get the name of the item, it's price, what material it's made out of, it's possible sizes, the shipping details, and how many items you have in your cart.
+
+ Then you should get the name of the item, it's price, what material it's made out of, it's possible sizes, the shipping details, and how many items you have in your cart within the console. This should also create a textfile called output.txt within the same folder and pastes the output.
